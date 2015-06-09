@@ -1,17 +1,18 @@
-const int pinSwitch = 7; //Pin Reed
-int StatOfSwitch = 0;
+const int reedPin = 7;
+const int ledPin = 5;
+int reedState = 0;
 
 void setup() {
-pinMode(pinSwitch, INPUT);
+  pinMode(reedPin, INPUT);
 }
 
 void loop() {
-  StatOfSwitch = digitalRead(pinSwitch); //Leggo il valore del Reed
-  if (StatOfSwitch == HIGH) {
-    digitalWrite(pinLed, HIGH);
+  reedState = digitalRead(pinSwitch);
+  if (reedState == HIGH) {
+    digitalWrite(ledPin, HIGH);
   }
   else {
-    digitalWrite(pinLed, LOW);
+    digitalWrite(ledPin, LOW);
   }
   delay(500);
 }
